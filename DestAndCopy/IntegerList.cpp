@@ -15,6 +15,42 @@ IntegerList::IntegerList(int size)
       list[ndx] = 0;
 }
 
+//copy constructor
+IntegerList::IntegerList(const IntegerList& other)
+{
+	numElements = other.numElements;
+	list = new int[numElements];
+	for (int i = 0; i < numElements; i++)
+	{
+		list[i] = other.list[i];
+	}
+	cout << "The copy constructor is now running." << endl;
+}
+
+// deletes the dynamically allocated memory
+IntegerList::~IntegerList()
+{
+	delete[] list;
+	cout << endl << "The destructor is now running." << endl;
+}
+
+// assignment operator
+IntegerList IntegerList::operator = (const IntegerList& other)
+{
+	if (this != &other)
+	{
+		delete[] list;
+		numElements = other.numElements;
+		list = new int[numElements];
+		for (int i = 0; i < numElements; i++)
+		{
+			list[i] = other.list[i];
+		}
+	}
+	return *this;
+	// this does not return *this, not sure how to do that without an error somewhere
+	// with this being IntegerList and not void and returning *this, the numbers do not copy the right way
+}
 
 //***********************************************************
 // isValid member function.                                 *
