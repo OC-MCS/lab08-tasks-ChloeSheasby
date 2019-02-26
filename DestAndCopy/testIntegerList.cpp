@@ -31,8 +31,5 @@ int main()
 	cout << endl << "B's values:" << endl;
 	display(b);
 
-	// the destructor runs an extra 2 times after compiling a and b, is that okay?
-	// is the copy constructor being called anywhere?
-
 	return 0;
 }

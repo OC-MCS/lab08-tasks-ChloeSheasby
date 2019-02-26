@@ -48,8 +48,6 @@ IntegerList IntegerList::operator = (const IntegerList& other)
 		}
 	}
 	return *this;
-	// this does not return *this, not sure how to do that without an error somewhere
-	// with this being IntegerList and not void and returning *this, the numbers do not copy the right way
 }
 
 //***********************************************************
